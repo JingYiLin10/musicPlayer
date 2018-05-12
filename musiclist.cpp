@@ -5,11 +5,20 @@ MusicList::MusicList(QWidget *parent) : QWidget(parent)
     playListBtn = new QPushButton;
     cloudBtn = new QPushButton;
     downloadBtn = new QPushButton;
+    phoneBtn = new QPushButton;
     searchBtn = new QPushButton;
+    vbtnPtr.push_back(cloudBtn);
+    vbtnPtr.push_back(phoneBtn);
+    vbtnPtr.push_back(playListBtn);
+    vbtnPtr.push_back(downloadBtn);
+    vbtnPtr.push_back(searchBtn);
 
     operNavLayout = new QHBoxLayout;
     operObjLayout = new QStackedLayout;
     musicListMainLayout = new QVBoxLayout;
+
+    cloudPage = new MusicListCloud;
+    phonePage = new MusicListPhone;
 
     this->setFixedSize(310,527);
     this->setLayout(musicListMainLayout);
@@ -20,24 +29,45 @@ MusicList::MusicList(QWidget *parent) : QWidget(parent)
     connectSlot();
 }
 
+//---------------slot
+void MusicList::musicListItemSwitch()
+{
+    QPushButton *senderBtn = qobject_cast<QPushButton *>(sender());
+    for(int i = 0; i < 2; ++i){
+        if(senderBtn == vbtnPtr[i]){
+            operObjLayout->setCurrentIndex(i);
+        }
+    }
+}
+
+//---------------Function
 void MusicList::setControlsLayout()
 {
     operNavLayout->setMargin(10);
     operNavLayout->setSpacing(0);
-    operNavLayout->addSpacing(40);
-    operNavLayout->addWidget(playListBtn);
+    operNavLayout->addSpacing(30);
+    operNavLayout->addWidget(cloudBtn);//playListBtn
     operNavLayout->addStretch();
-    operNavLayout->addWidget(cloudBtn);
+    operNavLayout->addWidget(phoneBtn); //cloudBtn
     operNavLayout->addStretch();
-    operNavLayout->addWidget(downloadBtn);
+    operNavLayout->addWidget(downloadBtn);//downloadBtn
     operNavLayout->addStretch();
-    operNavLayout->addWidget(searchBtn);
-    operNavLayout->addSpacing(40);
+    operNavLayout->addWidget(playListBtn);//phoneBtn
+    operNavLayout->addStretch();
+    operNavLayout->addWidget(searchBtn);//searchBtn
+    operNavLayout->addSpacing(30);
+
+    operObjLayout->setMargin(0);
+    operObjLayout->setSpacing(0);
+    operObjLayout->addWidget(cloudPage);
+    operObjLayout->addWidget(phonePage);
+    operObjLayout->setCurrentIndex(0);
 
     musicListMainLayout->setMargin(0);
     musicListMainLayout->setSpacing(0);
     musicListMainLayout->addLayout(operNavLayout);
-    musicListMainLayout->addStretch();
+    musicListMainLayout->addLayout(operObjLayout);
+
 
 }
 
@@ -45,22 +75,27 @@ void MusicList::setControlsForm()
 {
     playListBtn->setFixedSize(25,25);
     playListBtn->setIconSize(QSize(25,25));
-    playListBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\music1.png"));
+    playListBtn->setIcon(QIcon("../MusicSoft/img/music1.png"));
     playListBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     cloudBtn->setFixedSize(25,25);
     cloudBtn->setIconSize(QSize(25,25));
-    cloudBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\cloud1.png"));
+    cloudBtn->setIcon(QIcon("../MusicSoft/img/cloud1.png"));
     cloudBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     downloadBtn->setFixedSize(25,25);
     downloadBtn->setIconSize(QSize(25,25));
-    downloadBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\download1.png"));
+    downloadBtn->setIcon(QIcon("../MusicSoft/img/download1.png"));
     downloadBtn->setCursor(QCursor(Qt::PointingHandCursor));
+
+    phoneBtn->setFixedSize(25,25);
+    phoneBtn->setIconSize(QSize(25,25));
+    phoneBtn->setIcon(QIcon("../MusicSoft/img/iphone.png"));
+    phoneBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     searchBtn->setFixedSize(25,25);
     searchBtn->setIconSize(QSize(25,25));
-    searchBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\search1.png"));
+    searchBtn->setIcon(QIcon("../MusicSoft/img/search1.png"));
     searchBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
 }
@@ -71,11 +106,8 @@ void MusicList::setControlsStyle()
     QPalette palette;
     palette.setColor(QPalette::Background, QColor(255,255,255,20));
     this->setPalette(palette);
-}
 
-void MusicList::connectSlot()
-{
-    QFile file(QString("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\qss\\musicList.qss"));
+    QFile file(QString("../MusicSoft/qss/musicList.qss"));
     file.open(QFile::ReadOnly);
     if (file.isOpen())
     {
@@ -83,4 +115,10 @@ void MusicList::connectSlot()
         styleSheet += QLatin1String(file.readAll());
         this->setStyleSheet(styleSheet);
     }
+}
+
+void MusicList::connectSlot()
+{
+    connect(cloudBtn, QPushButton::clicked, this, musicListItemSwitch);
+    connect(phoneBtn, QPushButton::clicked, this, musicListItemSwitch);
 }

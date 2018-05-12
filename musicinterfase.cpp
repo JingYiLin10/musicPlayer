@@ -20,7 +20,7 @@ MusicInterfase::MusicInterfase(QWidget *parent) :
 
 
     QPalette pal;
-    QString imgname = "C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\theme2.jpg";
+    QString imgname = "../MusicSoft/img/theme4.jpg";
     QPixmap pixmap(imgname);
     pal.setBrush(QPalette::Background, QBrush(pixmap));
     this->setAutoFillBackground(true);

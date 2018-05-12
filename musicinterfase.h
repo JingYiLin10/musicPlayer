@@ -20,7 +20,7 @@ public:
     explicit MusicInterfase(QWidget *parent = 0);
     ~MusicInterfase();
 
-    void setControlsLayout();
+
 private:
     Ui::MusicInterfase *ui;
 
@@ -33,6 +33,7 @@ private:
     QVBoxLayout *musicMainLayout;
 
     //----------Function
+    void setControlsLayout();
     void setControlsForm();
 
 protected:

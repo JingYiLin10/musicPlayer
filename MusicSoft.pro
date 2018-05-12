@@ -16,12 +16,16 @@ SOURCES += main.cpp\
         musicinterfase.cpp \
     navigate.cpp \
     playcontrol.cpp \
-    musiclist.cpp
+    musiclist.cpp \
+    musiclistcloud.cpp \
+    musiclistphone.cpp
 
 HEADERS  += musicinterfase.h \
     navigate.h \
     playcontrol.h \
-    musiclist.h
+    musiclist.h \
+    musiclistcloud.h \
+    musiclistphone.h
 
 FORMS    += musicinterfase.ui
 
@@ -55,6 +59,13 @@ DISTFILES += \
     img/music2.png \
     img/search2.png \
     img/update.png \
-    img/cloud3.png
+    img/cloud3.png \
+    img/iphone.png \
+    img/jack.png \
+    img/wifi.png \
+    qss/musicListCloud.qss \
+    qss/musicListPhone.qss \
+    img/Ruler.png \
+    img/ruler1.png
 
 RC_FILE = exeicon.rc

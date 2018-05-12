@@ -7,7 +7,11 @@
 #include <QFile>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
+#include <vector>
+#include "musiclistcloud.h"
+#include "musiclistphone.h"
 
+enum SelectMusicItem{PLAYLIST, CLOUD, PHONE, DOWNLOAD, SEARCH};
 class MusicList : public QWidget
 {
     Q_OBJECT
@@ -17,13 +21,15 @@ public:
 signals:
 
 public slots:
+    void musicListItemSwitch();
 
 private:
     QPushButton *playListBtn;
     QPushButton *cloudBtn;
     QPushButton *downloadBtn;
+    QPushButton *phoneBtn;
     QPushButton *searchBtn;
-
+    std::vector<QPushButton*> vbtnPtr;
     //----------Layout
     QHBoxLayout *operNavLayout;
     QStackedLayout *operObjLayout;
@@ -34,6 +40,10 @@ private:
     void setControlsForm();
     void setControlsStyle();
     void connectSlot();
+
+    //child obj
+    MusicListCloud *cloudPage;
+    MusicListPhone *phonePage;
 };
 
 #endif // MUSICLIST_H

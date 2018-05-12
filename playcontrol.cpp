@@ -76,19 +76,19 @@ void PlayControl::setControlsForm()
 {
     preAMusicBtn->setFixedSize(35,35);
     preAMusicBtn->setIconSize(QSize(15,15));
-    preAMusicBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\pre.png"));
+    preAMusicBtn->setIcon(QIcon("../MusicSoft/img/pre.png"));
     preAMusicBtn->setStyleSheet("border: 2px solid white;");
     preAMusicBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     pauseMusicBtn->setFixedSize(45,45);
     pauseMusicBtn->setIconSize(QSize(40,40));
-    pauseMusicBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\stop.png"));
+    pauseMusicBtn->setIcon(QIcon("../MusicSoft/img/stop.png"));
     pauseMusicBtn->setStyleSheet("border-radius: 22px;border: 2px solid white;");
     pauseMusicBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     nextAMusicBtn->setFixedSize(35,35);
     nextAMusicBtn->setIconSize(QSize(15,15));
-    nextAMusicBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\next.png"));
+    nextAMusicBtn->setIcon(QIcon("../MusicSoft/img/next.png"));
     nextAMusicBtn->setStyleSheet("border: 2px solid white;");
     nextAMusicBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
@@ -99,22 +99,22 @@ void PlayControl::setControlsForm()
 
     likeBtn->setFixedSize(20,20);
     likeBtn->setIconSize(QSize(20,20));
-    likeBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\like1.png"));
+    likeBtn->setIcon(QIcon("../MusicSoft/img/like1.png"));
     likeBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     downloadBtn->setFixedSize(20,20);
     downloadBtn->setIconSize(QSize(20,20));
-    downloadBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\download1.png"));
+    downloadBtn->setIcon(QIcon("../MusicSoft/img/download1.png"));
     downloadBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     playModeBtn->setFixedSize(20,20);
     playModeBtn->setIconSize(QSize(20,20));
-    playModeBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\play1.png"));
+    playModeBtn->setIcon(QIcon("../MusicSoft/img/play1.png"));
     playModeBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     musicSound->setFixedSize(20,20);
     musicSound->setIconSize(QSize(20,20));
-    musicSound->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\sound.png"));
+    musicSound->setIcon(QIcon("../MusicSoft/img/sound.png"));
     musicSound->setCursor(QCursor(Qt::PointingHandCursor));
 
     soundEffect->setFixedSize(50,20);
@@ -129,7 +129,7 @@ void PlayControl::setControlsForm()
 
     playMusicList->setFixedSize(20,20);
     playMusicList->setIconSize(QSize(20,20));
-    playMusicList->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\cloud1.png"));
+    playMusicList->setIcon(QIcon("../MusicSoft/img/cloud1.png"));
     playMusicList->setCursor(QCursor(Qt::PointingHandCursor));
 }
 
@@ -140,7 +140,7 @@ void PlayControl::setControlsStyle()
     palette.setColor(QPalette::Background, QColor(255,255,255,40));
     this->setPalette(palette);
 
-    QFile file(QString("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\qss\\playcontrol.qss"));
+    QFile file(QString("../MusicSoft/qss/playcontrol.qss"));
     file.open(QFile::ReadOnly);
     if (file.isOpen())
     {

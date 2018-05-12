@@ -52,7 +52,7 @@ void Navigate::setControlsForm()
 {
     navIcon->setFixedSize(50, 30);
     navIcon->setIconSize(QSize(30, 30));
-    navIcon->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\icon.png"));
+    navIcon->setIcon(QIcon("../MusicSoft/img/icon.png"));
     loginBtn->setFixedSize(30, 20);
     loginBtn->setText(tr("登录"));
     loginBtn->setCursor(QCursor(Qt::PointingHandCursor));
@@ -62,32 +62,32 @@ void Navigate::setControlsForm()
     registBtn->setCursor(QCursor(Qt::PointingHandCursor));
     resultBtn->setFixedSize(20, 20);
     resultBtn->setIconSize(QSize(20, 20));
-    resultBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\result.png"));
+    resultBtn->setIcon(QIcon("../MusicSoft/img/result.png"));
     resultBtn->setCursor(QCursor(Qt::PointingHandCursor));
     updateBtn->setFixedSize(20, 20);
     updateBtn->setIconSize(QSize(20, 20));
-    updateBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\update.png"));
+    updateBtn->setIcon(QIcon("../MusicSoft/img/update.png"));
     updateBtn->setCursor(QCursor(Qt::PointingHandCursor));
     findEdit->setFixedSize(260, 25);
-    findEdit->addAction(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\search2.png"), QLineEdit::TrailingPosition);
+    findEdit->addAction(QIcon("../MusicSoft/img/search2.png"), QLineEdit::TrailingPosition);
     skinBtn->setFixedSize(20, 20);
     skinBtn->setIconSize(QSize(20, 20));
-    skinBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\skin.png"));
+    skinBtn->setIcon(QIcon("../MusicSoft/img/skin.png"));
     skinBtn->setCursor(QCursor(Qt::PointingHandCursor));
     miniBtn->setFixedSize(20, 20);
     miniBtn->setIconSize(QSize(20, 20));
-    miniBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\mini.png"));
+    miniBtn->setIcon(QIcon("../MusicSoft/img/mini.png"));
     miniBtn->setCursor(QCursor(Qt::PointingHandCursor));
     closeBtn->setFixedSize(20, 20);
     closeBtn->setIconSize(QSize(20, 20));
-    closeBtn->setIcon(QIcon("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\img\\close.png"));
+    closeBtn->setIcon(QIcon("../MusicSoft/img/close.png"));
     closeBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
 }
 
 void Navigate::setControlsStyle()
 {
-    QFile file(QString("C:\\Users\\wjingbo\\Desktop\\MusicSoft\\qss\\navigate.qss"));
+    QFile file(QString("../MusicSoft/qss/navigate.qss"));
     file.open(QFile::ReadOnly);
     if (file.isOpen())
     {
