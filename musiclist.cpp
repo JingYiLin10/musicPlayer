@@ -1,5 +1,11 @@
 #include "musiclist.h"
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 音乐列表
+ */
+
 MusicList::MusicList(QWidget *parent) : QWidget(parent)
 {
     playListBtn = new QPushButton;

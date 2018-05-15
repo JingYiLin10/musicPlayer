@@ -1,6 +1,12 @@
 #ifndef MUSICLIST_H
 #define MUSICLIST_H
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 音乐列表
+ */
+
 #include <QWidget>
 #include <QPushButton>
 #include <QStackedLayout>

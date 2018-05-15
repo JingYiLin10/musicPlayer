@@ -1,5 +1,11 @@
 #include "musiclistcloud.h"
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 音乐列表-云
+ */
+
 MusicListCloud::MusicListCloud(QWidget *parent) : QWidget(parent)
 {
     icon = new QPushButton;

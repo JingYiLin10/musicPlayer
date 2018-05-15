@@ -1,6 +1,12 @@
 #include "musicinterfase.h"
 #include "ui_musicinterfase.h"
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 音乐主界面框架
+ */
+
 MusicInterfase::MusicInterfase(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MusicInterfase)

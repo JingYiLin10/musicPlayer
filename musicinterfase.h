@@ -1,6 +1,12 @@
 #ifndef MUSICINTERFASE_H
 #define MUSICINTERFASE_H
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 音乐主界面框架
+ */
+
 #include "navigate.h"
 #include "playcontrol.h"
 #include "musiclist.h"

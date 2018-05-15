@@ -1,6 +1,12 @@
 #ifndef NAVIGATE_H
 #define NAVIGATE_H
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 导航栏
+ */
+
 #include <QWidget>
 #include <QLabel>
 #include <QPushButton>

@@ -1,5 +1,11 @@
 #include "musiclistphone.h"
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 音乐列表-手机
+ */
+
 MusicListPhone::MusicListPhone(QWidget *parent) : QWidget(parent)
 {
     selectInfo = new QLabel;

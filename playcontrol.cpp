@@ -1,5 +1,11 @@
 #include "playcontrol.h"
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 播放控制/其他按钮
+ */
+
 PlayControl::PlayControl(QWidget *parent) : QWidget(parent)
 {
     preAMusicBtn = new QPushButton;

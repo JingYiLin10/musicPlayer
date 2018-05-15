@@ -1,6 +1,12 @@
 #ifndef MUSICLISTCLOUD_H
 #define MUSICLISTCLOUD_H
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 音乐列表-云
+ */
+
 #include <QWidget>
 #include <QPushButton>
 #include <QHBoxLayout>

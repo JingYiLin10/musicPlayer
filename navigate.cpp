@@ -1,5 +1,11 @@
 #include "navigate.h"
 
+/**
+ * @author: jingbo
+ * @date: 2018/05/14
+ * @desc: 导航栏
+ */
+
 Navigate::Navigate(QWidget *parent) : QWidget(parent)
 {
     navIcon = new QPushButton;
