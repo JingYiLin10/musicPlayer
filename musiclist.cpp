@@ -16,8 +16,8 @@ MusicList::MusicList(QWidget *parent) : QWidget(parent)
     vbtnPtr.push_back(cloudBtn);
     vbtnPtr.push_back(phoneBtn);
     vbtnPtr.push_back(searchBtn);
-    vbtnPtr.push_back(downloadBtn);
     vbtnPtr.push_back(playListBtn);
+    vbtnPtr.push_back(downloadBtn);
 
     operNavLayout = new QHBoxLayout;
     operObjLayout = new QStackedLayout;
@@ -26,6 +26,7 @@ MusicList::MusicList(QWidget *parent) : QWidget(parent)
     cloudPage = new MusicListCloud;
     phonePage = new MusicListPhone;
     searchPage = new MusicListSearch;
+    playPage = new MusicListPlay;
 
     this->setFixedSize(310,527);
     this->setLayout(musicListMainLayout);
@@ -40,7 +41,7 @@ MusicList::MusicList(QWidget *parent) : QWidget(parent)
 void MusicList::musicListItemSwitch()
 {
     QPushButton *senderBtn = qobject_cast<QPushButton *>(sender());
-    for(int i = 0; i < 3; ++i){
+    for(int i = 0; i < 4; ++i){
         if(senderBtn == vbtnPtr[i]){
             operObjLayout->setCurrentIndex(i);
             QString url = "../MusicSoft/img/item1";
@@ -79,6 +80,7 @@ void MusicList::setControlsLayout()
     operObjLayout->addWidget(cloudPage);
     operObjLayout->addWidget(phonePage);
     operObjLayout->addWidget(searchPage);
+    operObjLayout->addWidget(playPage);
     operObjLayout->setCurrentIndex(0);
 
     musicListMainLayout->setMargin(0);
@@ -140,4 +142,5 @@ void MusicList::connectSlot()
     connect(cloudBtn, QPushButton::clicked, this, musicListItemSwitch);
     connect(phoneBtn, QPushButton::clicked, this, musicListItemSwitch);
     connect(searchBtn, QPushButton::clicked, this, musicListItemSwitch);
+    connect(playListBtn, QPushButton::clicked, this, musicListItemSwitch);
 }

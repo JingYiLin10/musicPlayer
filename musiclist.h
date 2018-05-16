@@ -18,6 +18,7 @@
 #include "musiclistcloud.h"
 #include "musiclistphone.h"
 #include "musiclistsearch.h"
+#include "musiclistplay.h"
 
 enum SelectMusicItem{PLAYLIST, CLOUD, PHONE, DOWNLOAD, SEARCH};
 class MusicList : public QWidget
@@ -53,6 +54,7 @@ private:
     MusicListCloud *cloudPage;
     MusicListPhone *phonePage;
     MusicListSearch *searchPage;
+    MusicListPlay *playPage;
 };
 
 #endif // MUSICLIST_H
