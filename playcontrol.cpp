@@ -50,6 +50,18 @@ void PlayControl::likeBtnSlot()
     }
 }
 
+void PlayControl::pauseMusicSlot()
+{
+    if(isPlay){
+        pauseMusicBtn->setIcon(QIcon("../MusicSoft/img/stop.png"));
+        isPlay = false;
+    }
+    else{
+        pauseMusicBtn->setIcon(QIcon("../MusicSoft/img/continue.png"));
+        isPlay = true;
+    }
+}
+
 void PlayControl::setControlsLayout()
 {
     controlLayout->setMargin(10);
@@ -103,6 +115,7 @@ void PlayControl::setControlsForm()
     pauseMusicBtn->setIcon(QIcon("../MusicSoft/img/stop.png"));
     pauseMusicBtn->setStyleSheet("border-radius: 22px;border: 2px solid white;");
     pauseMusicBtn->setCursor(QCursor(Qt::PointingHandCursor));
+    isPlay = false;
 
     nextAMusicBtn->setFixedSize(35,35);
     nextAMusicBtn->setIconSize(QSize(15,15));
@@ -172,4 +185,5 @@ void PlayControl::setControlsStyle()
 void PlayControl::connectSlot()
 {
     connect(likeBtn, QPushButton::clicked, this, likeBtnSlot);
+    connect(pauseMusicBtn, QPushButton::clicked, this, pauseMusicSlot);
 }

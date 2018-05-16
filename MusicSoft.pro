@@ -41,7 +41,6 @@ DISTFILES += \
     img/result.png \
     img/search1.png \
     img/skin.png \
-    img/continue.png \
     img/next.png \
     img/pre.png \
     img/stop.png \
@@ -67,15 +66,16 @@ DISTFILES += \
     qss/musicListSearch.qss \
     img/like2.png \
     img/item00.png \
-    img/item01.png \
     img/item02.png \
     img/item03.png \
     img/item04.png \
     img/item10.png \
-    img/item11.png \
     img/item12.png \
     img/item13.png \
     img/item14.png \
-    img/download.png
+    img/download.png \
+    img/continue.png \
+    img/item01.png \
+    img/item11.png
 
 RC_FILE = exeicon.rc
