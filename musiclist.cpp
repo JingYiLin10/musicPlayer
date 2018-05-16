@@ -43,6 +43,16 @@ void MusicList::musicListItemSwitch()
     for(int i = 0; i < 3; ++i){
         if(senderBtn == vbtnPtr[i]){
             operObjLayout->setCurrentIndex(i);
+            QString url = "../MusicSoft/img/item1";
+            url +=  (i + '0');
+            url += ".png";
+            senderBtn->setIcon(QIcon(url));
+        }
+        else{
+            QString url = "../MusicSoft/img/item0";
+            url +=  (i + '0');
+            url += ".png";
+            vbtnPtr[i]->setIcon(QIcon(url));
         }
     }
 }
@@ -83,27 +93,27 @@ void MusicList::setControlsForm()
 {
     playListBtn->setFixedSize(25,25);
     playListBtn->setIconSize(QSize(25,25));
-    playListBtn->setIcon(QIcon("../MusicSoft/img/music1.png"));
+    playListBtn->setIcon(QIcon("../MusicSoft/img/item03.png"));
     playListBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     cloudBtn->setFixedSize(25,25);
     cloudBtn->setIconSize(QSize(25,25));
-    cloudBtn->setIcon(QIcon("../MusicSoft/img/cloud1.png"));
+    cloudBtn->setIcon(QIcon("../MusicSoft/img/item10.png"));
     cloudBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     downloadBtn->setFixedSize(25,25);
     downloadBtn->setIconSize(QSize(25,25));
-    downloadBtn->setIcon(QIcon("../MusicSoft/img/download1.png"));
+    downloadBtn->setIcon(QIcon("../MusicSoft/img/item04.png"));
     downloadBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     phoneBtn->setFixedSize(25,25);
     phoneBtn->setIconSize(QSize(25,25));
-    phoneBtn->setIcon(QIcon("../MusicSoft/img/iphone.png"));
+    phoneBtn->setIcon(QIcon("../MusicSoft/img/item01.png"));
     phoneBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     searchBtn->setFixedSize(25,25);
     searchBtn->setIconSize(QSize(25,25));
-    searchBtn->setIcon(QIcon("../MusicSoft/img/search1.png"));
+    searchBtn->setIcon(QIcon("../MusicSoft/img/item02.png"));
     searchBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
 }

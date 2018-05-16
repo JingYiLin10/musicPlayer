@@ -45,8 +45,6 @@ DISTFILES += \
     img/next.png \
     img/pre.png \
     img/stop.png \
-    img/cloud1.png \
-    img/download1.png \
     img/like1.png \
     img/play1.png \
     img/sound.png \
@@ -55,14 +53,9 @@ DISTFILES += \
     img/theme3.jpg \
     img/theme4.jpg \
     qss/musicList.qss \
-    img/cloud2.png \
-    img/download2.png \
-    img/music1.png \
-    img/music2.png \
     img/search2.png \
     img/update.png \
     img/cloud3.png \
-    img/iphone.png \
     img/jack.png \
     img/wifi.png \
     qss/musicListCloud.qss \
@@ -71,6 +64,18 @@ DISTFILES += \
     img/ruler1.png \
     img/maxSearch.png \
     img/MusicBox.png \
-    qss/musicListSearch.qss
+    qss/musicListSearch.qss \
+    img/like2.png \
+    img/item00.png \
+    img/item01.png \
+    img/item02.png \
+    img/item03.png \
+    img/item04.png \
+    img/item10.png \
+    img/item11.png \
+    img/item12.png \
+    img/item13.png \
+    img/item14.png \
+    img/download.png
 
 RC_FILE = exeicon.rc

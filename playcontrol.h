@@ -26,7 +26,7 @@ public:
 signals:
 
 public slots:
-
+    void likeBtnSlot();
 private:
     QPushButton *preAMusicBtn;//上一首
     QPushButton *pauseMusicBtn;//暂停
@@ -57,6 +57,9 @@ private:
     void setControlsForm();
     void setControlsStyle();
     void connectSlot();
+
+    //----
+    bool isLike;    //是否喜欢
 
 };
 

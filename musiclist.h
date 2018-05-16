@@ -14,6 +14,7 @@
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 #include <vector>
+#include <QString>
 #include "musiclistcloud.h"
 #include "musiclistphone.h"
 #include "musiclistsearch.h"

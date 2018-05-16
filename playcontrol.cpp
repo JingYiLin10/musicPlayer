@@ -38,6 +38,18 @@ PlayControl::PlayControl(QWidget *parent) : QWidget(parent)
     connectSlot();
 }
 
+void PlayControl::likeBtnSlot()
+{
+    if(isLike){
+        likeBtn->setIcon(QIcon("../MusicSoft/img/like1.png"));
+        isLike = false;
+    }
+    else{
+        likeBtn->setIcon(QIcon("../MusicSoft/img/like2.png"));
+        isLike = true;
+    }
+}
+
 void PlayControl::setControlsLayout()
 {
     controlLayout->setMargin(10);
@@ -107,10 +119,11 @@ void PlayControl::setControlsForm()
     likeBtn->setIconSize(QSize(20,20));
     likeBtn->setIcon(QIcon("../MusicSoft/img/like1.png"));
     likeBtn->setCursor(QCursor(Qt::PointingHandCursor));
+    isLike = false;
 
     downloadBtn->setFixedSize(20,20);
     downloadBtn->setIconSize(QSize(20,20));
-    downloadBtn->setIcon(QIcon("../MusicSoft/img/download1.png"));
+    downloadBtn->setIcon(QIcon("../MusicSoft/img/download.png"));
     downloadBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
     playModeBtn->setFixedSize(20,20);
@@ -158,5 +171,5 @@ void PlayControl::setControlsStyle()
 
 void PlayControl::connectSlot()
 {
-
+    connect(likeBtn, QPushButton::clicked, this, likeBtnSlot);
 }
