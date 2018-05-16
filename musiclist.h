@@ -16,6 +16,7 @@
 #include <vector>
 #include "musiclistcloud.h"
 #include "musiclistphone.h"
+#include "musiclistsearch.h"
 
 enum SelectMusicItem{PLAYLIST, CLOUD, PHONE, DOWNLOAD, SEARCH};
 class MusicList : public QWidget
@@ -50,6 +51,7 @@ private:
     //child obj
     MusicListCloud *cloudPage;
     MusicListPhone *phonePage;
+    MusicListSearch *searchPage;
 };
 
 #endif // MUSICLIST_H

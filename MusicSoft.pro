@@ -70,6 +70,7 @@ DISTFILES += \
     img/Ruler.png \
     img/ruler1.png \
     img/maxSearch.png \
-    img/MusicBox.png
+    img/MusicBox.png \
+    qss/musicListSearch.qss
 
 RC_FILE = exeicon.rc

@@ -15,9 +15,9 @@ MusicList::MusicList(QWidget *parent) : QWidget(parent)
     searchBtn = new QPushButton;
     vbtnPtr.push_back(cloudBtn);
     vbtnPtr.push_back(phoneBtn);
-    vbtnPtr.push_back(playListBtn);
-    vbtnPtr.push_back(downloadBtn);
     vbtnPtr.push_back(searchBtn);
+    vbtnPtr.push_back(downloadBtn);
+    vbtnPtr.push_back(playListBtn);
 
     operNavLayout = new QHBoxLayout;
     operObjLayout = new QStackedLayout;
@@ -25,6 +25,7 @@ MusicList::MusicList(QWidget *parent) : QWidget(parent)
 
     cloudPage = new MusicListCloud;
     phonePage = new MusicListPhone;
+    searchPage = new MusicListSearch;
 
     this->setFixedSize(310,527);
     this->setLayout(musicListMainLayout);
@@ -39,7 +40,7 @@ MusicList::MusicList(QWidget *parent) : QWidget(parent)
 void MusicList::musicListItemSwitch()
 {
     QPushButton *senderBtn = qobject_cast<QPushButton *>(sender());
-    for(int i = 0; i < 2; ++i){
+    for(int i = 0; i < 3; ++i){
         if(senderBtn == vbtnPtr[i]){
             operObjLayout->setCurrentIndex(i);
         }
@@ -56,17 +57,18 @@ void MusicList::setControlsLayout()
     operNavLayout->addStretch();
     operNavLayout->addWidget(phoneBtn); //cloudBtn
     operNavLayout->addStretch();
-    operNavLayout->addWidget(downloadBtn);//downloadBtn
+    operNavLayout->addWidget(searchBtn);//downloadBtn
     operNavLayout->addStretch();
     operNavLayout->addWidget(playListBtn);//phoneBtn
     operNavLayout->addStretch();
-    operNavLayout->addWidget(searchBtn);//searchBtn
+    operNavLayout->addWidget(downloadBtn);//searchBtn
     operNavLayout->addSpacing(30);
 
     operObjLayout->setMargin(0);
     operObjLayout->setSpacing(0);
     operObjLayout->addWidget(cloudPage);
     operObjLayout->addWidget(phonePage);
+    operObjLayout->addWidget(searchPage);
     operObjLayout->setCurrentIndex(0);
 
     musicListMainLayout->setMargin(0);
@@ -127,4 +129,5 @@ void MusicList::connectSlot()
 {
     connect(cloudBtn, QPushButton::clicked, this, musicListItemSwitch);
     connect(phoneBtn, QPushButton::clicked, this, musicListItemSwitch);
+    connect(searchBtn, QPushButton::clicked, this, musicListItemSwitch);
 }
