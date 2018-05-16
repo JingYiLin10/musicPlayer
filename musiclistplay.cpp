@@ -47,7 +47,7 @@ void MusicListPlay::isShowList()
             recentPlayList->show();
             isShowRecent = true;
             recentListBtn->setIcon(QIcon("../MusicSoft/img/showList.png"));
-            recentListBtn->setStyleSheet("border-bottom: none");
+            recentListBtn->setStyleSheet("border-bottom: 1px solid rgba(255, 255, 255, 0%)");
         }
     }
 
@@ -81,11 +81,20 @@ void MusicListPlay::setControlsForm()
     isShowRecent = false;
 
     QStandardItemModel *model = new QStandardItemModel();
-    QStandardItem *item = new QStandardItem("item1");
-//    item->setIcon(QIcon("../MusicSoft/img/stop.png"));
+    QStandardItem *item = nullptr;
+    QString infoPre = "", musicInfo;
+    infoPre.resize(5, QChar(32));
+    QString timeInfo = "00:00";
+    musicInfo.resize(0);
+    musicInfo = infoPre + "陈一发儿 - 阿婆说";
+    musicInfo += "  \t\t";
+    item = new QStandardItem(musicInfo + timeInfo);
     model->appendRow(item);
-    item = new QStandardItem("item2");
-//    item->setIcon(QIcon("../MusicSoft/img/stop.png"));
+
+    musicInfo.resize(0);
+    musicInfo = infoPre + "陈一发儿 - 童话镇aaaa";
+    musicInfo += "  \t\t";
+    item = new QStandardItem(musicInfo + timeInfo);
     model->appendRow(item);
     defaultPlayList->setModel(model);
     defaultPlayList->setFixedHeight(64);
