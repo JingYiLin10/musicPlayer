@@ -15,17 +15,20 @@
 #include <QFile>
 #include <QDebug>
 
+#include "skindialog.h"
+
 class Navigate : public QWidget
 {
     Q_OBJECT
 public:
     explicit Navigate(QWidget *parent = 0);
     QPushButton *getResultPreBtn();
-
+    QPushButton *getSkinBtn();
+    QPushButton *getSkinDialogCloseBtn();
 signals:
 
 public slots:
-
+    void showSkinDialog();
 private:
     QPushButton *navIcon;
     QPushButton *loginBtn;
@@ -47,6 +50,10 @@ private:
     void setControlsForm();
     void setControlsStyle();
     void connectSlot();
+
+    //---Dialog
+    SkinDialog *skinDialog;
+
 };
 
 #endif // NAVIGATE_H

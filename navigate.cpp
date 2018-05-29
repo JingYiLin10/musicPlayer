@@ -19,20 +19,39 @@ Navigate::Navigate(QWidget *parent) : QWidget(parent)
     miniBtn = new QPushButton;
     closeBtn = new QPushButton;
 
+    skinDialog = new SkinDialog;
+
     loginRegLayout = new QHBoxLayout;
     navMainLayout = new QHBoxLayout;
     setLayout(navMainLayout);
     setFixedHeight(50);
     setControlsLayout();
     setControlsForm();
-    //setStyleSheet("background:yellow;");
     setControlsStyle();
     connectSlot();
+
 }
 
 QPushButton *Navigate::getResultPreBtn()
 {
     return resultBtn;
+}
+
+QPushButton *Navigate::getSkinBtn()
+{
+    return skinBtn;
+}
+
+QPushButton *Navigate::getSkinDialogCloseBtn()
+{
+    return skinDialog->getCloseBtn();
+}
+
+
+void Navigate::showSkinDialog()
+{
+    skinDialog->setModal(true);
+    skinDialog->show();
 }
 
 
@@ -96,6 +115,8 @@ void Navigate::setControlsForm()
 
     this->setWindowFlags(Qt::FramelessWindowHint);
 
+
+
 }
 
 void Navigate::setControlsStyle()
@@ -113,4 +134,6 @@ void Navigate::setControlsStyle()
 void Navigate::connectSlot()
 {
     connect(closeBtn,QPushButton::clicked,this, exit);
+    connect(skinBtn, QPushButton::clicked, this, showSkinDialog);
+
 }

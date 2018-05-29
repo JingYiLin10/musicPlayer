@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     musiclistphone.cpp \
     musiclistsearch.cpp \
     musiclistplay.cpp \
-    musicset.cpp
+    musicset.cpp \
+    skindialog.cpp \
+    musicplay.cpp
 
 HEADERS  += musicinterfase.h \
     navigate.h \
@@ -31,7 +33,9 @@ HEADERS  += musicinterfase.h \
     musiclistphone.h \
     musiclistsearch.h \
     musiclistplay.h \
-    musicset.h
+    musicset.h \
+    skindialog.h \
+    musicplay.h
 
 FORMS    += musicinterfase.ui
 
@@ -84,6 +88,7 @@ DISTFILES += \
     qss/musicListPlay.qss \
     img/showList.png \
     img/hideList.png \
-    qss/musicSet.qss
+    qss/musicSet.qss \
+    qss/skinDialog.qss
 
 RC_FILE = exeicon.rc

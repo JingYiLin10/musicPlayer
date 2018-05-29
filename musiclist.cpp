@@ -118,6 +118,7 @@ void MusicList::setControlsForm()
     searchBtn->setIcon(QIcon("../MusicSoft/img/item02.png"));
     searchBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
+    this->setWindowFlags(Qt::FramelessWindowHint);
 }
 
 void MusicList::setControlsStyle()

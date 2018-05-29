@@ -15,6 +15,7 @@
 #include "playcontrol.h"
 #include "musiclist.h"
 #include "musicset.h"
+#include "skindialog.h"
 
 namespace Ui {
 class MusicInterfase;
@@ -29,7 +30,10 @@ public:
     ~MusicInterfase();
 
 public slots:
-    void resultPre();
+    //---Nav
+    void resultPre();   //resultBtn
+    void showMask();    //mask
+    void hideMask();   //mask
 
 private:
     Ui::MusicInterfase *ui;
@@ -50,6 +54,10 @@ private:
 
     //-----Nav
     QPushButton *resultPreBtn;
+    QPushButton *skinBtn;
+    QPushButton *skinDiaCloseBtn;
+
+    QWidget *mask;
 
 protected:
     void mousePressEvent(QMouseEvent *event);

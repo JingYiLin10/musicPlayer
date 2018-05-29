@@ -12,13 +12,13 @@ MusicInterfase::MusicInterfase(QWidget *parent) :
     ui(new Ui::MusicInterfase)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::FramelessWindowHint);
     this->setFixedSize(1000,645);
 
     //子部件创建
     musicNav = new Navigate;
     resultPreBtn = musicNav->getResultPreBtn();
-
+    skinBtn = musicNav->getSkinBtn();
+    skinDiaCloseBtn = musicNav->getSkinDialogCloseBtn();
 
     musicPlayControl = new PlayControl;
     musicList = new MusicList;
@@ -37,7 +37,7 @@ MusicInterfase::MusicInterfase(QWidget *parent) :
     this->setPalette(pal);
 
 
-
+    mask = new QWidget;
     setControlsLayout();
     setControlsForm();
     connectSlot();
@@ -51,6 +51,17 @@ MusicInterfase::~MusicInterfase()
 void MusicInterfase::resultPre()
 {
     musicSet->resultPreIndex();
+}
+
+void MusicInterfase::showMask()
+{
+    mask->setGeometry(0, 0, mask->width(), mask->height());
+    mask->show();
+}
+
+void MusicInterfase::hideMask()
+{
+    mask->hide();
 }
 
 void MusicInterfase::setControlsLayout()
@@ -69,13 +80,22 @@ void MusicInterfase::setControlsLayout()
 
 void MusicInterfase::setControlsForm()
 {
+    //--skin
+    mask->setFixedSize(1000,645);
+    mask->setStyleSheet("QWidget{background-color:rgba(0,0,0,0.4);}");
+    mask->setWindowFlags(Qt::FramelessWindowHint);
+    mask->setParent(this);
+    mask->hide();
 
     this->setWindowFlags(Qt::FramelessWindowHint);
 }
 
 void MusicInterfase::connectSlot()
 {
+    //--Nav
     connect(resultPreBtn, QPushButton::clicked, this, resultPre);
+    connect(skinBtn, QPushButton::clicked, this, showMask);
+    connect(skinDiaCloseBtn, QPushButton::clicked, this, hideMask);
 }
 
 

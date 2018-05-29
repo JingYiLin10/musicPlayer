@@ -118,6 +118,9 @@ void MusicSet::setControlsForm()
     resultIndex.push(currentIndex);
     hLine->setFixedSize(690, 1);
     hLine->setStyleSheet("background: #E5E5E5; border: 0px;");
+
+
+    this->setWindowFlags(Qt::FramelessWindowHint);
 }
 
 void MusicSet::setControlsStyle()
