@@ -108,6 +108,8 @@ void MusicListPlay::setControlsForm()
     recentPlayList->setStyleSheet("border-bottom: 1px solid rgba(255, 255, 255, 10%)");
     recentPlayList->setSpacing(0);
 
+
+    this->setWindowFlags(Qt::FramelessWindowHint);
 }
 
 void MusicListPlay::setControlsStyle()

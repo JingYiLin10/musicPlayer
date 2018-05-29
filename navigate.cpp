@@ -30,6 +30,11 @@ Navigate::Navigate(QWidget *parent) : QWidget(parent)
     connectSlot();
 }
 
+QPushButton *Navigate::getResultPreBtn()
+{
+    return resultBtn;
+}
+
 
 void Navigate::setControlsLayout()
 {
@@ -88,6 +93,8 @@ void Navigate::setControlsForm()
     closeBtn->setIconSize(QSize(20, 20));
     closeBtn->setIcon(QIcon("../MusicSoft/img/close.png"));
     closeBtn->setCursor(QCursor(Qt::PointingHandCursor));
+
+    this->setWindowFlags(Qt::FramelessWindowHint);
 
 }
 

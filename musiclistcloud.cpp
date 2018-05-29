@@ -64,6 +64,8 @@ void MusicListCloud::setControlsForm()
     useBtn->setStyleSheet("QPushButton{background: rgba(255,255,255,30);}"
                           "QPushButton:hover{background: rgba(255,255,255,60);}");
     useBtn->setCursor(QCursor(Qt::PointingHandCursor));
+
+    this->setWindowFlags(Qt::FramelessWindowHint);
 }
 
 void MusicListCloud::setControlsStyle()

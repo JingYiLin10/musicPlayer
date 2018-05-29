@@ -123,7 +123,7 @@ void PlayControl::setControlsForm()
     nextAMusicBtn->setStyleSheet("border: 2px solid white;");
     nextAMusicBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
-    musicInfo->setText(tr("music"));
+    musicInfo->setText(tr("酷狗音乐"));
     musicTime->setText(tr("00:00/00:00"));
     musicSchedule->setFixedWidth(365);
     musicSchedule->setCursor(QCursor(Qt::PointingHandCursor));
@@ -163,6 +163,8 @@ void PlayControl::setControlsForm()
     playMusicList->setIconSize(QSize(20,20));
     playMusicList->setIcon(QIcon("../MusicSoft/img/cloud1.png"));
     playMusicList->setCursor(QCursor(Qt::PointingHandCursor));
+
+    this->setWindowFlags(Qt::FramelessWindowHint);
 }
 
 void PlayControl::setControlsStyle()

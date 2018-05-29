@@ -4,9 +4,9 @@ QPushButton{
 }
 
 QLabel{
-    font-family: '楷体';
-    font-weight: 100;
-    font: 14px;
+    font-family: '黑体';
+    font-weight: bold;
+    font: 12px;
     color: white;
 }
 

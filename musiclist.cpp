@@ -61,7 +61,7 @@ void MusicList::musicListItemSwitch()
 //---------------Function
 void MusicList::setControlsLayout()
 {
-    operNavLayout->setMargin(10);
+    operNavLayout->setMargin(6);//原为10
     operNavLayout->setSpacing(0);
     operNavLayout->addSpacing(30);
     operNavLayout->addWidget(cloudBtn);//playListBtn

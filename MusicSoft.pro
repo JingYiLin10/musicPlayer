@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     musiclistcloud.cpp \
     musiclistphone.cpp \
     musiclistsearch.cpp \
-    musiclistplay.cpp
+    musiclistplay.cpp \
+    musicset.cpp
 
 HEADERS  += musicinterfase.h \
     navigate.h \
@@ -29,7 +30,8 @@ HEADERS  += musicinterfase.h \
     musiclistcloud.h \
     musiclistphone.h \
     musiclistsearch.h \
-    musiclistplay.h
+    musiclistplay.h \
+    musicset.h
 
 FORMS    += musicinterfase.ui
 
@@ -81,6 +83,7 @@ DISTFILES += \
     img/item11.png \
     qss/musicListPlay.qss \
     img/showList.png \
-    img/hideList.png
+    img/hideList.png \
+    qss/musicSet.qss
 
 RC_FILE = exeicon.rc

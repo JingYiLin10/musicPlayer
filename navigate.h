@@ -20,7 +20,7 @@ class Navigate : public QWidget
     Q_OBJECT
 public:
     explicit Navigate(QWidget *parent = 0);
-
+    QPushButton *getResultPreBtn();
 
 signals:
 

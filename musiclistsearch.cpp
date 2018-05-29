@@ -67,6 +67,8 @@ void MusicListSearch::setControlsForm()
                           "QPushButton:hover{background: rgba(255,255,255,60);}");
     searchBtn->setCursor(QCursor(Qt::PointingHandCursor));
 
+    this->setWindowFlags(Qt::FramelessWindowHint);
+
 }
 
 void MusicListSearch::setControlsStyle()

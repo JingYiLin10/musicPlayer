@@ -17,8 +17,12 @@ MusicInterfase::MusicInterfase(QWidget *parent) :
 
     //子部件创建
     musicNav = new Navigate;
+    resultPreBtn = musicNav->getResultPreBtn();
+
+
     musicPlayControl = new PlayControl;
     musicList = new MusicList;
+    musicSet = new MusicSet;
 
     musicCenterLayout = new QHBoxLayout;
     musicMainLayout = new QVBoxLayout;
@@ -26,7 +30,7 @@ MusicInterfase::MusicInterfase(QWidget *parent) :
 
 
     QPalette pal;
-    QString imgname = "../MusicSoft/img/theme4.jpg";
+    QString imgname = "../MusicSoft/img/theme3.jpg";
     QPixmap pixmap(imgname);
     pal.setBrush(QPalette::Background, QBrush(pixmap));
     this->setAutoFillBackground(true);
@@ -35,7 +39,8 @@ MusicInterfase::MusicInterfase(QWidget *parent) :
 
 
     setControlsLayout();
-    //setControlsForm();
+    setControlsForm();
+    connectSlot();
 }
 
 MusicInterfase::~MusicInterfase()
@@ -43,12 +48,17 @@ MusicInterfase::~MusicInterfase()
     delete ui;
 }
 
+void MusicInterfase::resultPre()
+{
+    musicSet->resultPreIndex();
+}
+
 void MusicInterfase::setControlsLayout()
 {
     musicCenterLayout->setMargin(0);
     musicCenterLayout->setSpacing(0);
     musicCenterLayout->addWidget(musicList);
-    musicCenterLayout->addStretch();
+    musicCenterLayout->addWidget(musicSet);
 
     musicMainLayout->setMargin(0);
     musicMainLayout->setSpacing(0);
@@ -59,7 +69,13 @@ void MusicInterfase::setControlsLayout()
 
 void MusicInterfase::setControlsForm()
 {
-    musicList->setStyleSheet("background:red;");
+
+    this->setWindowFlags(Qt::FramelessWindowHint);
+}
+
+void MusicInterfase::connectSlot()
+{
+    connect(resultPreBtn, QPushButton::clicked, this, resultPre);
 }
 
 
