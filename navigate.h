@@ -16,6 +16,7 @@
 #include <QDebug>
 
 #include "skindialog.h"
+#include "musicplay.h"
 
 class Navigate : public QWidget
 {
@@ -29,6 +30,7 @@ signals:
 
 public slots:
     void showSkinDialog();
+    void miniWindow();
 private:
     QPushButton *navIcon;
     QPushButton *loginBtn;

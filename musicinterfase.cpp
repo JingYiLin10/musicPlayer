@@ -30,11 +30,17 @@ MusicInterfase::MusicInterfase(QWidget *parent) :
 
 
     QPalette pal;
-    QString imgname = "../MusicSoft/img/theme3.jpg";
+    QString imgname = "../localMusic/陈一发儿/photo/cyfe4.jpg";
     QPixmap pixmap(imgname);
+    pixmap = pixmap.scaled(QSize(1000, 645));
     pal.setBrush(QPalette::Background, QBrush(pixmap));
+//    QPainter painter(this);
+//    painter.drawPixmap(0,0,this->width(), this->height(), pixmap);
     this->setAutoFillBackground(true);
     this->setPalette(pal);
+
+
+    musicPlay = new MusicPlay;  //只为生成静态，不使用
 
 
     mask = new QWidget;

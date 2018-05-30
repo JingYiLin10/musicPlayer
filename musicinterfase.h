@@ -10,6 +10,7 @@
 #include <QWidget>
 #include <QMouseEvent>
 #include <QHBoxLayout>
+#include <QPainter>
 
 #include "navigate.h"
 #include "playcontrol.h"
@@ -17,6 +18,7 @@
 #include "musicset.h"
 #include "skindialog.h"
 
+#include "musicplay.h"
 namespace Ui {
 class MusicInterfase;
 }
@@ -58,6 +60,10 @@ private:
     QPushButton *skinDiaCloseBtn;
 
     QWidget *mask;
+
+    //---MusicPlay
+    MusicPlay *musicPlay;
+
 
 protected:
     void mousePressEvent(QMouseEvent *event);

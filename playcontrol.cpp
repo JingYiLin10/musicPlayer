@@ -30,6 +30,7 @@ PlayControl::PlayControl(QWidget *parent) : QWidget(parent)
     otherActLayout = new QHBoxLayout;
     controlMainLayout = new QHBoxLayout;
 
+    playTime = new QTimer;
     setLayout(controlMainLayout);
     setFixedHeight(68);
     setControlsLayout();
@@ -55,11 +56,40 @@ void PlayControl::pauseMusicSlot()
     if(isPlay){
         pauseMusicBtn->setIcon(QIcon("../MusicSoft/img/stop.png"));
         isPlay = false;
+        MusicPlay::pause();
+        playTime->stop();
     }
     else{
         pauseMusicBtn->setIcon(QIcon("../MusicSoft/img/continue.png"));
         isPlay = true;
+        MusicPlay::play();
+        if(MusicPlay::status == 0){
+            musicInfo->setText(MusicPlay::musicName);
+            musicTime->setText(MusicPlay::countTime());
+            musicSchedule->setRange(0, (int)MusicPlay::playTime);
+            MusicPlay::status = 1;
+        }
+        playTime->start();
+
     }
+}
+
+void PlayControl::playTimeSlot()
+{
+    musicTime->setText(MusicPlay::currentPos() + "/" + MusicPlay::currentTime);
+    musicSchedule->setValue(MusicPlay::mediaPlayer->position());
+}
+
+void PlayControl::playStateStop()
+{
+    if(MusicPlay::mediaPlayer->state() != QMediaPlayer::StoppedState)
+        return ;
+    musicSchedule->setValue(0);
+    QString text = "00:00/" + MusicPlay::currentTime;
+    musicTime->setText(text);
+    pauseMusicBtn->setIcon(QIcon("../MusicSoft/img/stop.png"));
+    MusicPlay::status = 0;
+
 }
 
 void PlayControl::setControlsLayout()
@@ -164,6 +194,8 @@ void PlayControl::setControlsForm()
     playMusicList->setIcon(QIcon("../MusicSoft/img/cloud1.png"));
     playMusicList->setCursor(QCursor(Qt::PointingHandCursor));
 
+
+
     this->setWindowFlags(Qt::FramelessWindowHint);
 }
 
@@ -188,4 +220,6 @@ void PlayControl::connectSlot()
 {
     connect(likeBtn, QPushButton::clicked, this, likeBtnSlot);
     connect(pauseMusicBtn, QPushButton::clicked, this, pauseMusicSlot);
+    connect(playTime, SIGNAL(timeout()), this, SLOT(playTimeSlot()));
+    connect(MusicPlay::mediaPlayer, QMediaPlayer::stateChanged, this, playStateStop);
 }

@@ -54,6 +54,11 @@ void Navigate::showSkinDialog()
     skinDialog->show();
 }
 
+void Navigate::miniWindow()
+{
+    MusicPlay::setPlayUrl("../localMusic/陈一发儿/陈一发儿 - 阿婆说.mp3");
+}
+
 
 void Navigate::setControlsLayout()
 {
@@ -135,5 +140,6 @@ void Navigate::connectSlot()
 {
     connect(closeBtn,QPushButton::clicked,this, exit);
     connect(skinBtn, QPushButton::clicked, this, showSkinDialog);
+    connect(miniBtn, QPushButton::clicked, this, miniWindow);
 
 }

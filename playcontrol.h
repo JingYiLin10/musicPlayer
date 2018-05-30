@@ -15,6 +15,9 @@
 #include <QGridLayout>
 #include <QVBoxLayout>
 #include <QFile>
+#include <QTimer>
+
+#include "musicplay.h"
 
 class PlayControl : public QWidget
 {
@@ -22,12 +25,13 @@ class PlayControl : public QWidget
 public:
     explicit PlayControl(QWidget *parent = 0);
 
-
 signals:
 
 public slots:
     void likeBtnSlot();
     void pauseMusicSlot();
+    void playTimeSlot();    //时间轴1秒
+    void playStateStop();   //播放结束
 private:
     QPushButton *preAMusicBtn;//上一首
     QPushButton *pauseMusicBtn;//暂停
@@ -62,6 +66,9 @@ private:
     //----
     bool isLike;    //是否喜欢
     bool isPlay;    //是否播放
+
+    //--播放控制
+    QTimer * playTime;
 
 };
 
