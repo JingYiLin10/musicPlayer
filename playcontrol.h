@@ -16,6 +16,8 @@
 #include <QVBoxLayout>
 #include <QFile>
 #include <QTimer>
+#include <QTime>
+#include <QCoreApplication>
 
 #include "musicplay.h"
 
