@@ -89,6 +89,11 @@ DISTFILES += \
     img/showList.png \
     img/hideList.png \
     qss/musicSet.qss \
-    qss/skinDialog.qss
+    qss/skinDialog.qss \
+    img/item20.png \
+    img/item21.png \
+    img/item22.png \
+    img/item23.png \
+    img/item24.png
 
 RC_FILE = exeicon.rc
